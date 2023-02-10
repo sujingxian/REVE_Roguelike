@@ -41,6 +41,30 @@ If we want to make one instance different from the other instance, we can either
 ### Update vs LateUpdate vs FixedUpdate
 **LateUpdate** is only excited after all the other updates are executed. Camera control functions are usually placed in the **LateUpdate** function since the camera control logic always depends on the end location and direction of the player character.
 
- 
+### Communication between scripts
+As long as the script is in the asset, the other scripts can access the script. To access the instance of one script we can use the following code.
 
+```c#
+// Script A
+class A
+{
+	public float A_property;
+}
+
+
+// Script B
+class B
+{
+	public A a;
+	void Start()
+	{
+		// Three methods to get the instance of class A.
+		a = GameObject.GetComponent<A>();
+		a = GameObject.Find("ObjectName").GetComponent<A>();
+		a = GameObject.FindGameObjectWithTag("Tag").GetComponent<A>();
+	}
+}
+```
+
+### New Input System
 
