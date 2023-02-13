@@ -26,7 +26,7 @@ The `[xxx]` is an attribute. Attributes are used to attach metadata to the class
 #### Development
 
 We need to generate two classes to create the "read-only field" attribute. One is the attribute itself. Another is the field drawer used to display the data which owns the attribute in a read-only form.
-```
+``` c#
 [System.AttributeUsage(System.AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
 public class ReadOnlyFieldAttribute : PropertyAttribute { }
 ```
